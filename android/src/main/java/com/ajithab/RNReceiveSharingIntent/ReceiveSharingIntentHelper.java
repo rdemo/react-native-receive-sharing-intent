@@ -138,8 +138,10 @@ public class ReceiveSharingIntentHelper {
         if(type == null) return;
         if (type.startsWith("text")) {
             intent.removeExtra(Intent.EXTRA_TEXT);
+            intent.replaceExtras(new Bundle());
         } else if (type.startsWith("image") || type.startsWith("video") || type.startsWith("application")) {
             intent.removeExtra(Intent.EXTRA_STREAM);
+            intent.replaceExtras(new Bundle());
         }
     }
 
